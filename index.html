@@ -1,0 +1,73 @@
+<!-- נור צובח 214459463
+ביסאם פרח 211861208 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Book</title>
+    <link rel="stylesheet" href="style.css" /> <!-- קישור לקובץ העיצוב -->
+  </head>
+  <body>
+    <div class="container">
+      <header>
+      <h1>📖 Phone Book</h1> <!-- כותרת ראשית של הדף -->
+</header>
+<main>
+  <!-- אזור עליון עם שורת חיפוש וכפתורים -->
+      <div class="top-bar">
+        <span class="contact-count">0 contacts</span> <!-- מונה אנשי קשר -->
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search contacts..."
+          class="search-bar"
+        />
+        <div class="actions">
+          <button id="addBtn" class="btn add-btn">👤➕ Add Contact</button> <!-- כפתור הוספה -->
+          <button id="deleteAllBtn" class="btn delete-all"> <!-- כפתור מחיקת הכל -->
+            🗑️ Delete All
+          </button> 
+          <button id="effectBtn" class="btn night-mode">🌙 Night Mode</button> <!-- כפתור מצב לילה -->
+        </div>
+      </div>
+
+      <ul id="contactsList" class="contact-list"></ul> <!-- רשימת אנשי קשר תיווצר ב-JS -->
+    </div>
+
+    <!-- Popup Form -->
+    <!-- טופס קופץ להוספה / עריכה -->
+    <div id="popupOverlay" class="hidden">
+      <div class="popup">
+        <h2>Add / Edit Contact</h2>
+        <form id="contactForm">
+          <input type="text" id="nameInput" placeholder="Name" required />
+          <input type="tel" id="phoneInput" placeholder="Phone" required />
+          <input type="email" id="emailInput" placeholder="Email" />
+          <input type="text" id="addressInput" placeholder="Address" />
+          <textarea id="notesInput" placeholder="Notes..."></textarea>
+          <input type="text" id="tagsInput" placeholder="Tags" />
+          <label><input type="checkbox" id="favoriteInput" /> Favorite</label>
+          <input type="file" id="imageInput" accept="image/*" /> <!-- העלאת תמונה -->
+          <div class="form-buttons">
+            <button type="submit">Save</button>
+            <button type="button" id="cancelBtn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Info Modal -->
+     <!-- חלון מידע של איש קשר -->
+    <div id="infoOverlay" class="hidden">
+      <div class="popup" id="infoContent"></div>
+    </div>
+  </main>
+
+    <footer class="footer">
+      <p>© 2025 Noor Suboh & Besam Farah. All rights reserved.</p> <!-- קרדיט -->
+    </footer>
+
+    <script src="main.js"></script> <!-- קישור לקובץ JS -->
+  </body>
+</html>
